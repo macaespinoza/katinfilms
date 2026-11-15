@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="es" class="js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Katinfilms — Casa productora audiovisual y estudio de animación en Chile. Largometrajes, cortometrajes animados y producción audiovisual corporativa."
+    />
+    <meta name="theme-color" content="#0c0212" />
+
+    <title>Katinfilms — Cine, Animación &amp; Producción Audiovisual</title>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+    <script>
+      (function () {
+        var d = document.documentElement;
+        d.classList.add('js');
+        var m = /^#(cine|corporativo)(?:-|$)/.exec(location.hash);
+        d.dataset.route = m ? m[1] : 'landing';
+        d.dataset.phase = m ? 'world' : 'stage';
+        d.dataset.intro = '';
+        setTimeout(function () {
+          d.removeAttribute('data-intro');
+        }, 2200);
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#worlds">Saltar al contenido</a>
+
+    <!--
+      Sprite SVG de marca:
+      - #g-gato: gato saltando sobre cinta de película (coordenadas completas de Asset 7)
+      - #g-katin / #g-films: logotipo tipográfico oficial
+    -->
+    <svg class="sprite" aria-hidden="true" focusable="false" width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden">
+      <defs>
+        <g id="g-gato">
+          <path d="M1035.789 398.332 C1013.664 390.54 981.722 353.289 981.722 353.289 L932.978 262.48 C932.978 262.48 902.388 225.647 893.152 203.924 C886.195 187.563 886.76 168.865 885.629 151.123 C884.166 128.18 887.471 105.05 885.386 82.155 C883.89 65.722 879.202 47.88 871.407 33.337 C864.053 19.619 853.99 8.048 839.027 3.761 C820.334 -1.595 800.735 -2.011 783.872 7.673 C776.237 12.058 779.091 20.844 787.896 20.813 C791.472 20.801 835.163 2.568 850.409 57.72 C862.672 102.082 851.818 184.134 816.666 173.536 C784.421 163.814 750.023 178.417 731.43 181.634 C721.852 183.291 716.339 170.675 707.677 176.289 C703.173 179.209 691.329 184.105 677.381 187.074 C661.68 190.416 632.624 185.941 617.98 194.199 C599.085 204.853 553.494 234.862 562.358 243.762 C582.231 263.714 614.85 206.798 639.84 227.554 C647.316 233.764 611.094 241.133 603.182 260.019 C599.859 267.953 616.016 273.188 624.098 269.057 C634.251 263.866 674.502 241.178 691.548 251.566 C725.271 272.117 731.686 254.47 749.298 271.973 C777.769 300.269 801.51 397.18 836.994 434.075 C897.894 497.398 943.827 507.523 1017.122 555.965 C1083.428 599.788 1139.736 640.497 1158.974 647.639 C1213.045 667.71 1208.361 627.42 1201.65 624.001 C1173.099 609.457 1134.294 568.403 1107.07 530.894 C1099.6 520.602 1097.898 492.286 1104.008 492.264 C1106.774 492.255 1118.108 497.066 1127.675 496.161 C1135.381 495.432 1144.568 493.745 1150.634 488.547 C1156.122 483.844 1148.885 471.29 1149.408 460.052 C1149.586 456.238 1155.1 451.217 1154.529 447.106 C1152.992 436.043 1146.872 419.167 1146.872 419.167 C1146.872 419.167 1171.209 406.917 1168.525 397.865 C1168.525 397.865 1144.693 401.642 1131.565 400.205 C1117.132 398.625 1103.494 391.349 1088.977 391.065 C1071.086 390.715 1052.667 404.277 1035.789 398.332 Z"/>
+          <path d="M477.383 351.599 C487.574 345.135 497.761 338.675 507.943 332.217 C534.098 344.954 560.112 357.871 585.975 370.979 C594.193 375.144 594.944 386.594 587.341 391.817 C574.47 400.658 561.592 409.505 548.707 418.355 C545.083 420.845 540.396 421.187 536.443 419.251 C516.837 409.649 497.149 400.149 477.383 390.748 Z M593.879 427.786 C607.261 419.322 620.635 410.865 633.999 402.414 C637.693 400.078 642.353 399.902 646.205 401.952 C670.642 414.956 694.917 428.168 719.026 441.596 C726.785 445.917 727.409 456.846 720.193 462.046 C707.871 470.924 695.543 479.807 683.208 488.695 C679.391 491.445 674.328 491.75 670.2 489.48 C645.222 475.739 620.071 462.223 594.752 448.922 C586.425 444.548 585.94 432.808 593.879 427.786 Z M477.383 561.868 L477.383 415.548 C487.87 420.537 498.336 425.554 508.78 430.599 C540.242 446.248 571.473 462.192 602.461 478.449 C610.579 482.707 611.208 494.093 603.611 499.244 C574.893 518.714 546.138 538.211 517.345 557.734 C510.363 562.47 503.378 567.206 496.391 571.944 C488.307 577.426 477.383 571.635 477.383 561.868 Z M725.197 500.674 C738.072 492.164 750.938 483.661 763.795 475.164 C767.677 472.599 772.677 472.471 776.676 474.833 C800.012 488.621 823.172 502.64 846.156 516.893 C853.496 521.446 853.844 532.005 846.82 537.056 C834.425 545.969 822.023 554.887 809.614 563.81 C805.598 566.698 800.23 566.87 796.029 564.245 C772.769 549.715 749.329 535.423 725.712 521.365 C717.964 516.753 717.688 505.638 725.197 500.674 Z M554.343 577.373 C586.226 555.483 618.063 533.626 649.853 511.803 C653.696 509.165 658.704 508.953 662.748 511.258 C696.967 530.762 730.833 550.728 764.337 571.171 C799.581 593.486 834.4 616.368 868.79 639.823 C898.443 660.809 927.769 682.239 956.77 704.111 C963.143 708.917 963.203 718.472 956.892 723.381 C932.029 742.72 907.14 762.077 882.226 781.453 C880.089 783.115 877.459 784.017 874.752 784.017 L489.558 784.017 C482.834 784.017 477.383 778.566 477.383 771.842 L477.383 636.627 C477.383 632.615 479.359 628.861 482.666 626.59 C496.423 617.144 533.715 591.537 554.343 577.373 Z M850.772 580.275 C863.061 571.319 875.342 562.369 887.616 553.425 C891.787 550.385 897.417 550.307 901.66 553.229 C924.446 568.917 947.041 584.863 969.445 601.066 C976.048 605.842 976.143 615.65 969.634 620.576 C957.726 629.588 945.811 638.605 933.89 647.626 C929.639 650.843 923.786 650.921 919.44 647.819 C896.86 631.706 874.089 615.85 851.127 600.252 C844.127 595.497 843.945 585.25 850.772 580.275 Z M971.58 667.313 C983.329 658.293 995.071 649.278 1006.808 640.267 C1011.211 636.887 1017.338 636.914 1021.7 640.332 C1043.634 657.522 1065.381 674.969 1086.943 692.67 C1092.903 697.563 1092.835 706.71 1086.802 711.534 C1075.423 720.633 1064.038 729.736 1052.649 738.842 C1048.172 742.421 1041.803 742.394 1037.344 738.778 C1015.605 721.147 993.679 703.773 971.563 686.658 C965.225 681.752 965.233 672.185 971.58 667.313 Z M1075.782 770.896 C1090.762 758.734 1105.734 746.576 1120.698 734.424 C1125.311 730.678 1131.951 730.811 1136.399 734.738 C1146.983 744.081 1157.524 753.484 1168.024 762.946 C1176.251 770.362 1170.976 784.017 1159.884 784.017 L1090.844 784.017 C1085.833 779.63 1080.812 775.256 1075.782 770.896 Z M965.379 762.28 C973.784 755.655 982.186 749.031 990.586 742.409 C995.063 738.879 1001.387 738.93 1005.795 742.533 C1013.96 749.205 1022.099 755.914 1030.212 762.658 C1038.903 769.881 1033.76 784.017 1022.442 784.017 L972.916 784.017 C961.364 784.017 956.307 769.432 965.379 762.28 Z"/>
+        </g>
+        <g id="g-katin">
+          <path d="M2.271 754.864 C1.395 754.864 0.797 754.684 0.478 754.326 C0.159 753.967 0 753.349 0 752.473 L0 672.378 C0 671.501 0.159 670.884 0.478 670.525 C0.797 670.167 1.395 669.987 2.271 669.987 L6.336 669.987 C7.212 669.987 7.81 670.167 8.129 670.525 C8.448 670.884 8.607 671.501 8.607 672.378 L8.607 707.883 L20.083 707.883 L22.713 707.883 L49.491 672.019 C50.129 671.143 50.746 670.585 51.344 670.346 C51.942 670.107 52.918 669.987 54.273 669.987 L58.577 669.987 C59.135 669.987 59.553 670.087 59.832 670.286 C60.111 670.485 60.25 670.744 60.25 671.063 C60.25 671.382 60.091 671.78 59.772 672.259 L31.44 709.556 C34.708 710.513 37.457 712.067 39.689 714.219 C41.92 716.37 43.992 719.279 45.905 722.945 L61.087 752.473 C61.326 752.951 61.446 753.349 61.446 753.668 C61.446 754.465 60.888 754.864 59.772 754.864 L55.947 754.864 C54.432 754.864 53.376 754.724 52.779 754.445 C52.181 754.166 51.683 753.628 51.284 752.831 L37.896 726.173 C35.983 722.348 33.811 719.658 31.38 718.104 C28.95 716.55 25.423 715.773 20.801 715.773 L8.607 715.773 L8.607 752.473 C8.607 753.349 8.448 753.967 8.129 754.326 C7.81 754.684 7.212 754.864 6.336 754.864 Z"/>
+          <path d="M72.563 754.864 C71.368 754.864 70.77 754.465 70.77 753.668 L71.009 752.592 L103.047 671.661 C103.366 670.864 103.724 670.326 104.123 670.047 C104.521 669.768 105.159 669.629 106.036 669.629 L109.622 669.629 C110.499 669.629 111.156 669.768 111.594 670.047 C112.033 670.326 112.372 670.824 112.611 671.541 L144.648 752.592 L144.888 753.668 C144.888 754.465 144.29 754.864 143.094 754.864 L139.628 754.864 C138.193 754.864 137.177 754.724 136.579 754.445 C135.981 754.166 135.563 753.628 135.324 752.831 L126.358 729.998 L88.941 729.998 L79.975 752.831 C79.656 753.628 79.218 754.166 78.66 754.445 C78.102 754.724 77.106 754.864 75.671 754.864 Z M123.967 722.826 L109.502 686.126 C108.785 683.974 108.327 682.081 108.128 680.447 C107.928 678.814 107.829 677.917 107.829 677.758 L107.351 677.758 C107.351 677.917 107.271 678.814 107.112 680.447 C106.952 682.081 106.514 683.934 105.797 686.006 L91.451 722.826 Z"/>
+          <path d="M173.817 754.864 C172.941 754.864 172.343 754.684 172.024 754.326 C171.705 753.967 171.546 753.349 171.546 752.473 L171.546 677.997 L146.681 677.997 C145.804 677.997 145.186 677.837 144.828 677.518 C144.469 677.2 144.29 676.602 144.29 675.725 L144.29 672.378 C144.29 671.501 144.469 670.884 144.828 670.525 C145.186 670.167 145.804 669.987 146.681 669.987 L204.899 669.987 C205.775 669.987 206.393 670.167 206.752 670.525 C207.11 670.884 207.29 671.501 207.29 672.378 L207.29 675.725 C207.29 676.602 207.11 677.2 206.752 677.518 C206.393 677.837 205.775 677.997 204.899 677.997 L180.153 677.997 L180.153 752.473 C180.153 753.349 179.974 753.967 179.615 754.326 C179.256 754.684 178.639 754.864 177.762 754.864 Z"/>
+          <path d="M226.536 754.864 C225.66 754.864 225.062 754.684 224.743 754.326 C224.424 753.967 224.265 753.349 224.265 752.473 L224.265 672.378 C224.265 671.501 224.424 670.884 224.743 670.525 C225.062 670.167 225.66 669.987 226.536 669.987 L230.601 669.987 C231.477 669.987 232.075 670.167 232.394 670.525 C232.713 670.884 232.872 671.501 232.872 672.378 L232.872 752.473 C232.872 753.349 232.713 753.967 232.394 754.326 C232.075 754.684 231.477 754.864 230.601 754.864 Z"/>
+          <path d="M259.889 754.864 C259.012 754.864 258.415 754.684 258.096 754.326 C257.777 753.967 257.618 753.349 257.618 752.473 L257.618 672.378 C257.618 671.501 257.777 670.884 258.096 670.525 C258.415 670.167 259.012 669.987 259.889 669.987 L263.834 669.987 C264.87 669.987 265.667 670.386 266.225 671.183 L303.523 724.858 C305.674 728.126 308.025 732.15 310.576 736.932 C312.249 740.04 313.445 742.072 314.162 743.029 L314.521 743.029 C314.521 742.311 314.361 740.12 314.043 736.454 C313.485 729.6 313.206 724.34 313.206 720.674 L313.206 672.259 C313.206 671.382 313.365 670.784 313.684 670.465 C314.003 670.147 314.6 669.987 315.477 669.987 L319.183 669.987 C320.06 669.987 320.677 670.167 321.036 670.525 C321.394 670.884 321.574 671.501 321.574 672.378 L321.574 752.473 C321.574 753.349 321.394 753.967 321.036 754.326 C320.677 754.684 320.06 754.864 319.183 754.864 L315.358 754.864 C314.72 754.864 314.222 754.84 313.863 754.624 C313.505 754.465 313.166 754.106 312.847 753.549 L274.712 698.797 C272.879 696.088 270.768 692.342 268.377 687.56 C266.464 684.054 265.348 682.101 265.029 681.703 L264.671 681.703 C264.671 682.181 264.83 684.173 265.149 687.68 C265.707 694.215 265.986 699.236 265.986 702.742 L265.986 752.473 C265.986 753.349 265.806 753.967 265.448 754.326 C265.089 754.684 264.472 754.864 263.595 754.864 Z"/>
+        </g>
+        <g id="g-films">
+          <path d="M348.591 754.864 C347.077 754.864 346.021 754.565 345.423 753.967 C344.825 753.369 344.526 752.313 344.526 750.799 L344.526 674.052 C344.526 672.537 344.825 671.481 345.423 670.884 C346.021 670.286 347.077 669.987 348.591 669.987 L396.169 669.987 C397.684 669.987 398.74 670.286 399.337 670.884 C399.935 671.481 400.234 672.537 400.234 674.052 L400.234 679.909 C400.234 681.424 399.935 682.48 399.337 683.077 C398.74 683.675 397.684 683.974 396.169 683.974 L359.469 683.974 L359.469 705.97 L390.312 705.97 C391.826 705.97 392.882 706.269 393.48 706.867 C394.077 707.464 394.376 708.52 394.376 710.034 L394.376 715.892 C394.376 717.406 394.077 718.462 393.48 719.06 C392.882 719.658 391.826 719.957 390.312 719.957 L359.469 719.957 L359.469 750.799 C359.469 752.313 359.17 753.369 358.573 753.967 C357.975 754.565 356.919 754.864 355.405 754.864 Z"/>
+          <path d="M420.676 754.864 C419.162 754.864 418.106 754.565 417.508 753.967 C416.91 753.369 416.611 752.313 416.611 750.799 L416.611 674.052 C416.611 672.537 416.91 671.481 417.508 670.884 C418.106 670.286 419.162 669.987 420.676 669.987 L427.49 669.987 C429.004 669.987 430.06 670.286 430.658 670.884 C431.256 671.481 431.554 672.537 431.554 674.052 L431.554 750.799 C431.554 752.313 431.256 753.369 430.658 753.967 C430.06 754.565 429.004 754.864 427.49 754.864 Z"/>
+          <path d="M457.017 754.864 C455.503 754.864 454.447 754.565 453.849 753.967 C453.252 753.369 452.953 752.313 452.953 750.799 L452.953 674.052 C452.953 672.537 452.953 671.481 453.849 670.884 C454.447 670.286 455.503 669.987 457.017 669.987 L463.831 669.987 C465.346 669.987 466.402 670.286 466.999 670.884 C467.597 671.481 467.896 672.537 467.896 674.052 L467.896 740.877 L502.205 740.877 C503.719 740.877 504.775 741.176 505.373 741.773 C505.971 742.371 506.27 743.427 506.27 744.941 L506.27 750.799 C506.27 752.313 505.971 753.369 505.373 753.967 C504.775 754.565 503.719 754.864 502.205 754.864 Z"/>
+          <path d="M524.918 754.864 C523.404 754.864 522.348 754.565 521.751 753.967 C521.153 753.369 520.854 752.313 520.854 750.799 L520.854 674.052 C520.854 672.537 521.153 671.481 521.751 670.884 C522.348 670.286 523.404 669.987 524.918 669.987 L530.178 669.987 C531.852 669.987 533.067 670.186 533.824 670.585 C534.582 670.983 535.279 671.82 535.917 673.095 L560.901 717.566 L585.647 673.215 C586.364 671.86 587.061 670.983 587.739 670.585 C588.416 670.186 589.552 669.987 591.146 669.987 L597.004 669.987 C598.518 669.987 599.594 670.286 600.231 670.884 C600.869 671.481 601.188 672.537 601.188 674.052 L601.188 750.799 C601.188 752.313 600.869 753.369 600.231 753.967 C599.594 754.565 598.518 754.864 597.004 754.864 L590.907 754.864 C589.393 754.864 588.337 754.565 587.739 753.967 C587.141 753.369 586.842 752.313 586.842 750.799 L586.842 714.338 C586.842 707.644 587.799 699.714 589.711 690.549 L588.994 690.549 C587.56 694.773 586.085 698.518 584.571 701.786 C583.057 705.053 581.224 708.56 579.072 712.306 L567.357 733.107 C566.719 734.222 566.081 734.979 565.444 735.378 C564.806 735.776 563.89 735.976 562.694 735.976 L558.869 735.976 C557.674 735.976 556.777 735.796 556.179 735.438 C555.582 735.079 554.924 734.302 554.207 733.107 L542.252 712.306 C540.26 708.879 538.606 705.611 537.291 702.503 C535.976 699.395 534.562 695.37 533.047 690.429 L532.211 690.429 C533.964 699.116 534.841 707.126 534.841 714.458 L534.841 750.799 C534.841 752.313 534.542 753.369 533.944 753.967 C533.346 754.565 532.29 754.864 530.776 754.864 Z"/>
+          <path d="M651.635 756.657 C642.63 756.657 635.537 755.003 630.356 751.696 C625.176 748.388 621.311 743.387 618.761 736.693 C618.442 735.577 618.282 734.86 618.282 734.541 C618.282 733.744 618.522 733.126 619 732.688 C619.478 732.25 620.275 731.831 621.391 731.433 L627.846 729.042 C628.962 728.723 629.639 728.564 629.878 728.564 C630.595 728.564 631.193 728.803 631.671 729.281 C632.15 729.759 632.588 730.516 632.986 731.552 C634.58 735.139 636.931 737.888 640.039 739.801 C643.148 741.714 647.013 742.67 651.635 742.67 C664.307 742.67 670.643 738.526 670.643 730.237 C670.643 726.492 669.029 723.862 665.801 722.348 C662.574 720.833 657.891 719.757 651.755 719.12 C645.22 718.403 639.761 717.426 635.377 716.191 C630.994 714.956 627.228 712.625 624.08 709.198 C620.932 705.771 619.358 700.83 619.358 694.374 C619.358 689.274 620.594 684.751 623.064 680.806 C625.535 676.861 629.241 673.773 634.182 671.541 C639.123 669.31 645.1 668.194 652.113 668.194 C660.322 668.194 666.857 669.668 671.719 672.617 C676.58 675.566 680.485 680.109 683.434 686.245 C683.912 687.202 684.151 687.999 684.151 688.636 C684.151 689.832 683.195 690.868 681.282 691.744 L674.588 694.613 C673.631 695.012 672.914 695.211 672.436 695.211 C671.4 695.211 670.404 694.334 669.447 692.581 C667.774 689.234 665.602 686.723 662.932 685.05 C660.262 683.376 656.656 682.539 652.113 682.539 C640.478 682.539 634.66 686.205 634.66 693.537 C634.66 696.247 635.576 698.359 637.41 699.873 C639.243 701.387 641.574 702.483 644.403 703.161 C647.232 703.838 650.878 704.416 655.341 704.894 C661.239 705.532 666.319 706.568 670.583 708.002 C674.847 709.437 678.433 711.887 681.342 715.354 C684.251 718.821 685.705 723.663 685.705 729.879 C685.705 735.218 684.39 739.901 681.76 743.925 C679.13 747.95 675.245 751.078 670.105 753.309 C664.964 755.541 658.808 756.657 651.635 756.657 Z"/>
+        </g>
+      </defs>
+    </svg>
+
+    <main id="worlds" class="worlds">
+      <!-- Capa del corte: cinta perforada, lockup de portada y puertas laterales -->
+      <div class="split-ui">
+        <div id="strip" class="strip-pos">
+          <div class="strip">
+            <div class="strip__film" data-strip-film aria-hidden="true"></div>
+          </div>
+
+          <div id="lockup" class="lockup" data-lockup>
+            <span class="sr-only">Katinfilms</span>
+            <svg class="lockup__word lockup__word--katin" viewBox="0 668 325 89" width="140" height="38" aria-hidden="true" focusable="false">
+              <use href="#g-katin" />
+            </svg>
+            <div class="lockup__plate" aria-hidden="true">
+              <svg viewBox="475 0 735 786" width="60" height="64" aria-hidden="true" focusable="false">
+                <use href="#g-gato" />
+              </svg>
+            </div>
+            <svg class="lockup__word lockup__word--films" viewBox="344 668 342 89" width="148" height="38" aria-hidden="true" focusable="false">
+              <use href="#g-films" />
+            </svg>
+          </div>
+        </div>
+
+        <a class="door door--corporativo" href="#corporativo" aria-label="Ir al mundo Corporativo">
+          <span class="door__label">Corporativo →</span>
+        </a>
+        <a class="door door--cine" href="#cine" aria-label="Ir al mundo Cine">
+          <span class="door__label">← Cine</span>
+        </a>
+      </div>
+
+      <!-- ================================================================
+           MUNDO 1 — CINE (Oscuro · Narrativa & Animación)
+           ================================================================ -->
+      <section id="cine" class="world world--cine" data-world="cine" aria-label="Cine y Animación">
+        <div class="world__mask">
+          <div class="world__inner">
+            <header class="world-nav">
+              <a class="world-nav__brand" href="#" aria-label="Katinfilms — volver a la portada dividida">
+                <svg class="brand-cat" viewBox="475 0 735 786" width="32" height="34" aria-hidden="true"><use href="#g-gato" /></svg>
+                <svg class="brand-word" viewBox="0 668 686 89" width="132" height="17" aria-hidden="true">
+                  <use href="#g-katin" />
+                  <use href="#g-films" />
+                </svg>
+              </a>
+              <button type="button" class="world-nav__toggle" aria-expanded="false" aria-controls="cine-nav-links">Menú</button>
+              <nav id="cine-nav-links" class="world-nav__links" aria-label="Secciones de Cine">
+                <a href="#cine-obras">Obras</a>
+                <a href="#cine-estudio">Estudio</a>
+                <a href="#cine-nosotras">Nosotras</a>
+                <a href="#cine-contacto">Contacto</a>
+              </nav>
+              <a class="world-nav__switch" href="#corporativo" aria-label="Ir al mundo Corporativo">
+                <span>Corporativo</span>
+                <span class="switch-arrow" aria-hidden="true">→</span>
+              </a>
+            </header>
+
+            <div class="hero hero--cine">
+              <!-- Portada interactiva cuando los dos mundos están divididos -->
+              <a
+                class="hero__cover"
+                href="#cine"
+                data-cover
+                aria-label="Entrar a Cine — largometrajes, cortometrajes y animación"
+              >
+                <div class="cover__backdrop" aria-hidden="true">
+                  <img src="/media/img/work/michiboo-portada.png" alt="" loading="eager" decoding="async" />
+                </div>
+                <div class="cover__text">
+                  <span class="cover__eyebrow">01 · CINE &amp; ANIMACIÓN</span>
+                  <span class="cover__title" data-split>Cine</span>
+                  <span class="cover__lede">Largometrajes, cortometrajes animados y obras originales con mirada autoral.</span>
+                  <span class="cover__cta">Explorar obras <span aria-hidden="true">→</span></span>
+                </div>
+              </a>
+
+              <!-- Contenido principal al abrir el mundo Cine -->
+              <div class="hero__content">
+                <div class="hero__main">
+                  <p class="eyebrow" data-hero-part>CINE INDEPENDIENTE · ANIMACIÓN · DESARROLLO</p>
+                  <h1 class="hero__title" tabindex="-1" data-hero-part data-split>Historias que nacen para la gran pantalla</h1>
+                  <p class="hero__lead" data-hero-part>
+                    Desarrollamos largometrajes, cortometrajes animados y universos visuales propios desde la escritura de guion y el arte conceptual hasta la postproducción cinematográfica.
+                  </p>
+                  <div class="hero__actions" data-hero-part>
+                    <a class="btn btn--primary" href="#cine-obras">Ver catálogo de obras</a>
+                    <a class="btn btn--ghost" href="#cine-contacto">Conversar un proyecto</a>
+                  </div>
+                </div>
+
+                <aside class="hero__showcase" aria-label="Obra destacada">
+                  <div class="showcase-card">
+                    <div class="showcase-card__media frame" data-hero-part data-showreel>
+                      <img
+                        src="/media/img/work/michiboo-portada.png"
+                        alt="Póster oficial del cortometraje animado MichiBoo"
+                        loading="eager"
+                        decoding="async"
+                      />
+                      <span class="showcase-card__badge">En destaque · 2025</span>
+                    </div>
+                    <div class="showcase-card__body" data-hero-part>
+                      <div class="showcase-card__meta">
+                        <span>Cortometraje Animado</span>
+                        <span>·</span>
+                        <span>Producción Original</span>
+                      </div>
+                      <h2 class="showcase-card__title">MichiBoo</h2>
+                      <p class="showcase-card__desc">
+                        Fantasía animada, diseño de personajes y dirección de arte original desarrollada íntegramente por Katinfilms.
+                      </p>
+                    </div>
+                  </div>
+                </aside>
+              </div>
+            </div>
+
+            <section id="cine-obras" class="section" aria-labelledby="cine-obras-title" data-ready>
+              <header class="section__head" data-reveal>
+                <div>
+                  <p class="eyebrow">CATÁLOGO DE PRODUCCIONES</p>
+                  <h2 id="cine-obras-title" class="section__title" data-reveal="title">Obras y proyectos</h2>
+                </div>
+                <div class="filters" data-work-filters="cine" role="group" aria-label="Filtrar por formato"></div>
+              </header>
+              <ul class="films" data-work-grid="cine"></ul>
+            </section>
+
+            <section id="cine-estudio" class="section" aria-labelledby="cine-estudio-title" data-ready>
+              <header class="section__head" data-reveal>
+                <div>
+                  <p class="eyebrow">CREACIÓN AUDIOVISUAL</p>
+                  <h2 id="cine-estudio-title" class="section__title" data-reveal="title">Nuestro quehacer cinematográfico</h2>
+                </div>
+              </header>
+              <ol class="steps">
+                <li class="step" data-reveal>
+                  <div class="step__media">
+                    <img src="/media/img/brand/gato-mistico.png" alt="" loading="lazy" decoding="async" />
+                  </div>
+                  <span class="step__num">01 · Guion y Desarrollo</span>
+                  <h3 class="step__title">Mundos e historias con voz propia</h3>
+                  <p class="step__body">
+                    Escritura de guiones cinematográficos, carpetas de desarrollo, biblias de arte y creación de personajes para cine de ficción y animación.
+                  </p>
+                </li>
+                <li class="step" data-reveal>
+                  <div class="step__media">
+                    <img src="/media/img/brand/mesa-animacion.png" alt="" loading="lazy" decoding="async" />
+                  </div>
+                  <span class="step__num">02 · Dirección de Arte y Animación</span>
+                  <h3 class="step__title">Diseño visual fotograma a fotograma</h3>
+                  <p class="step__body">
+                    Desarrollo de styleframes, narrativa visual, animación 2D/3D y construcción de atmósferas que dan identidad única a cada obra.
+                  </p>
+                </li>
+                <li class="step" data-reveal>
+                  <div class="step__media">
+                    <img src="/media/img/brand/camara-cine.png" alt="" loading="lazy" decoding="async" />
+                  </div>
+                  <span class="step__num">03 · Producción y Postproducción</span>
+                  <h3 class="step__title">Del rodaje a la sala de cine</h3>
+                  <p class="step__body">
+                    Dirección cinematográfica, montaje, diseño sonoro y corrección de color pensados para el circuito de festivales y distribución.
+                  </p>
+                </li>
+              </ol>
+            </section>
+
+            <section id="cine-nosotras" class="section" aria-labelledby="cine-nosotras-title" data-ready>
+              <header class="section__head" data-reveal>
+                <div>
+                  <p class="eyebrow">DIRECCIÓN CREATIVA</p>
+                  <h2 id="cine-nosotras-title" class="section__title" data-reveal="title">Nosotras</h2>
+                  <p class="section__intro">
+                    Katinfilms es una casa productora independiente liderada por realizadoras chilenas apasionadas por el cine de género, la animación y las narrativas visuales.
+                  </p>
+                </div>
+              </header>
+              <ul class="people">
+                <li class="person" data-reveal>
+                  <figure class="person__photo frame" data-reveal="frame">
+                    <img
+                      src="/media/img/team/catalina-800.webp"
+                      srcset="/media/img/team/catalina-480.webp 480w, /media/img/team/catalina-800.webp 800w"
+                      sizes="(min-width: 48rem) 24rem, 92vw"
+                      width="800"
+                      height="1000"
+                      alt="Retrato de Catalina Krügler"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </figure>
+                  <div class="person__info">
+                    <h3 class="person__name">Catalina Krügler</h3>
+                    <p class="person__role">Directora, Guionista y Productora Ejecutiva</p>
+                    <p class="person__bio">
+                      Creadora de historias para cine y animación. Lidera el desarrollo narrativo, la escritura de guion y la dirección general de las obras originales del estudio.
+                    </p>
+                  </div>
+                </li>
+                <li class="person" data-reveal>
+                  <figure class="person__photo frame" data-reveal="frame">
+                    <img
+                      src="/media/img/team/integrante-2-800.webp"
+                      srcset="/media/img/team/integrante-2-480.webp 480w, /media/img/team/integrante-2-800.webp 800w"
+                      sizes="(min-width: 48rem) 24rem, 92vw"
+                      width="800"
+                      height="1000"
+                      alt="Retrato de Constanza"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </figure>
+                  <div class="person__info">
+                    <h3 class="person__name">Constanza</h3>
+                    <p class="person__role">Dirección de Arte, Realización y Postproducción</p>
+                    <p class="person__bio">
+                      Especialista en estética cinematográfica, desarrollo visual y realización técnica. Coordina la identidad plástica y el acabado visual de cada producción.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </section>
+
+            <section id="cine-contacto" class="section section--contact" aria-labelledby="cine-contacto-title" data-ready data-reveal>
+              <div class="contact-card">
+                <p class="eyebrow">COPRODUCCIONES · FESTIVALES · PRENSA</p>
+                <h2 id="cine-contacto-title" class="section__title" data-reveal="title">¿Hablamos de cine?</h2>
+                <p class="contact__lead">
+                  Si buscas coproducir, conocer nuestros proyectos en desarrollo o solicitar screeners de nuestras obras, escríbenos directamente.
+                </p>
+                <a class="contact__mail" href="mailto:contacto@katinfilms.com">contacto@katinfilms.com</a>
+                <ul class="contact__links" aria-label="Redes de Katinfilms">
+                  <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                  <li><a href="https://vimeo.com/" target="_blank" rel="noopener noreferrer">Vimeo</a></li>
+                  <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                </ul>
+              </div>
+            </section>
+
+            <footer class="world-footer" data-ready>
+              <span>© 2026 Katinfilms · Santiago de Chile</span>
+              <a href="#corporativo">Ir a Producción Corporativa →</a>
+            </footer>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           MUNDO 2 — CORPORATIVO (Claro · Marcas, Empresas e Instituciones)
+           ================================================================ -->
+      <section id="corporativo" class="world world--corporativo" data-world="corporativo" aria-label="Producción Audiovisual Corporativa">
+        <div class="world__mask">
+          <div class="world__inner">
+            <header class="world-nav">
+              <a class="world-nav__brand" href="#" aria-label="Katinfilms — volver a la portada dividida">
+                <svg class="brand-cat" viewBox="475 0 735 786" width="32" height="34" aria-hidden="true"><use href="#g-gato" /></svg>
+                <svg class="brand-word" viewBox="0 668 686 89" width="132" height="17" aria-hidden="true">
+                  <use href="#g-katin" />
+                  <use href="#g-films" />
+                </svg>
+              </a>
+              <button type="button" class="world-nav__toggle" aria-expanded="false" aria-controls="corporativo-nav-links">Menú</button>
+              <nav id="corporativo-nav-links" class="world-nav__links" aria-label="Secciones de Corporativo">
+                <a href="#corporativo-clientes">Clientes</a>
+                <a href="#corporativo-trabajos">Trabajos</a>
+                <a href="#corporativo-servicios">Servicios</a>
+                <a href="#corporativo-nosotras">Nosotras</a>
+                <a href="#corporativo-contacto">Contacto</a>
+              </nav>
+              <a class="world-nav__switch" href="#cine" aria-label="Ir al mundo Cine">
+                <span class="switch-arrow" aria-hidden="true">←</span>
+                <span>Cine</span>
+              </a>
+            </header>
+
+            <div class="hero hero--corporativo">
+              <!-- Portada interactiva cuando los dos mundos están divididos -->
+              <a
+                class="hero__cover"
+                href="#corporativo"
+                data-cover
+                aria-label="Entrar a Corporativo — producción audiovisual para empresas y marcas"
+              >
+                <div class="cover__backdrop" aria-hidden="true">
+                  <img src="/media/img/work/myl-styleframe.png" alt="" loading="eager" decoding="async" />
+                </div>
+                <div class="cover__text">
+                  <span class="cover__eyebrow">02 · EMPRESAS &amp; MARCAS</span>
+                  <span class="cover__title" data-split>Corporativo</span>
+                  <span class="cover__lede">Producción audiovisual integral, campañas digitales y cobertura para marcas líderes.</span>
+                  <span class="cover__cta">Ver soluciones <span aria-hidden="true">→</span></span>
+                </div>
+              </a>
+
+              <!-- Contenido principal al abrir el mundo Corporativo -->
+              <div class="hero__content">
+                <div class="hero__main">
+                  <p class="eyebrow" data-hero-part>PRODUCCIÓN INTEGRAL PARA EMPRESAS Y AGENCIAS</p>
+                  <h1 class="hero__title" tabindex="-1" data-hero-part data-split>Producción audiovisual que impulsa tu marca</h1>
+                  <p class="hero__lead" data-hero-part>
+                    Acompañamos a empresas e instituciones desde el concepto creativo y el guion hasta el rodaje en terreno, animación motion graphics y entrega multiformato.
+                  </p>
+                  <div class="hero__actions" data-hero-part>
+                    <a class="btn btn--primary" href="#corporativo-contacto">Cotizar un proyecto</a>
+                    <a class="btn btn--ghost" href="#corporativo-trabajos">Ver portafolio</a>
+                  </div>
+                </div>
+
+                <aside class="hero__showcase" aria-label="Capacidades de producción">
+                  <div class="showcase-card showcase-card--corp">
+                    <div class="showcase-card__media frame" data-hero-part data-showreel>
+                      <img
+                        src="/media/img/work/michiboo-styleframe.jpg"
+                        alt="Dirección de arte y producción audiovisual Katinfilms"
+                        loading="eager"
+                        decoding="async"
+                      />
+                      <span class="showcase-card__badge">Estándar Cinematográfico</span>
+                    </div>
+                    <div class="showcase-card__body" data-hero-part>
+                      <h2 class="showcase-card__title">Soluciones de extremo a extremo</h2>
+                      <ul class="showcase-card__list">
+                        <li>Videos institucionales y corporativos B2B</li>
+                        <li>Campañas publicitarias para redes y ecosistemas digitales</li>
+                        <li>Animación 2D/3D y visualización de datos</li>
+                        <li>Cobertura industrial, eventos y lanzamientos</li>
+                      </ul>
+                    </div>
+                  </div>
+                </aside>
+              </div>
+            </div>
+
+            <section id="corporativo-clientes" class="section section--clients" aria-labelledby="corporativo-clientes-title" data-ready data-reveal>
+              <header class="clients-head">
+                <p id="corporativo-clientes-title" class="eyebrow">MARCAS E INSTITUCIONES QUE HAN CONFIADO EN NUESTRO TRABAJO</p>
+              </header>
+              <ul class="clients-grid" aria-label="Logos de clientes">
+                <li class="client-logo">
+                  <img src="/media/img/clients/legrand.png" alt="Legrand" loading="lazy" decoding="async" />
+                </li>
+                <li class="client-logo">
+                  <img src="/media/img/clients/bticino.webp" alt="BTicino" loading="lazy" decoding="async" />
+                </li>
+                <li class="client-logo">
+                  <img src="/media/img/clients/activa.png" alt="Activa Research" loading="lazy" decoding="async" />
+                </li>
+                <li class="client-logo">
+                  <img src="/media/img/clients/solis-storage.png" alt="Solis Storage" loading="lazy" decoding="async" />
+                </li>
+              </ul>
+            </section>
+
+            <section id="corporativo-trabajos" class="section" aria-labelledby="corporativo-trabajos-title" data-ready>
+              <header class="section__head" data-reveal>
+                <div>
+                  <p class="eyebrow">PORTAFOLIO COMERCIAL</p>
+                  <h2 id="corporativo-trabajos-title" class="section__title" data-reveal="title">Trabajos destacados</h2>
+                </div>
+                <div class="filters" data-work-filters="corporativo" role="group" aria-label="Filtrar por tipo de servicio"></div>
+              </header>
+              <ul class="jobs" data-work-grid="corporativo"></ul>
+            </section>
+
+            <section id="corporativo-servicios" class="section" aria-labelledby="corporativo-servicios-title" data-ready>
+              <header class="section__head" data-reveal>
+                <div>
+                  <p class="eyebrow">METODOLOGÍA DE TRABAJO</p>
+                  <h2 id="corporativo-servicios-title" class="section__title" data-reveal="title">Cómo trabajamos</h2>
+                  <p class="section__intro">
+                    Nos hacemos cargo de todo el flujo audiovisual para que tu equipo tenga un único interlocutor de principio a fin, cumpliendo plazos y objetivos comerciales.
+                  </p>
+                </div>
+              </header>
+              <ol class="steps">
+                <li class="step" data-reveal>
+                  <div class="step__media">
+                    <img src="/media/img/brand/claqueta-proceso.png" alt="" loading="lazy" decoding="async" />
+                  </div>
+                  <span class="step__num">01 · Preproducción</span>
+                  <h3 class="step__title">Estrategia, guion y planificación</h3>
+                  <p class="step__body">
+                    Aterrizamos tus objetivos de comunicación en una propuesta creativa clara, escaleta técnica, storyboard, casting, locaciones y plan de rodaje.
+                  </p>
+                </li>
+                <li class="step" data-reveal>
+                  <div class="step__media">
+                    <img src="/media/img/brand/camara-cine.png" alt="" loading="lazy" decoding="async" />
+                  </div>
+                  <span class="step__num">02 · Producción y Rodaje</span>
+                  <h3 class="step__title">Equipo técnico en terreno o estudio</h3>
+                  <p class="step__body">
+                    Dirección, fotografía en alta definición, iluminación profesional y sonido directo adaptados a plantas industriales, oficinas o set.
+                  </p>
+                </li>
+                <li class="step" data-reveal>
+                  <div class="step__media">
+                    <img src="/media/img/brand/mesa-animacion.png" alt="" loading="lazy" decoding="async" />
+                  </div>
+                  <span class="step__num">03 · Postproducción y Entrega</span>
+                  <h3 class="step__title">Edición, motion graphics y formatos</h3>
+                  <p class="step__body">
+                    Montaje dinámico, gráfica animada con la identidad de tu marca, corrección de color, mezcla de audio y masters listos para cada plataforma.
+                  </p>
+                </li>
+              </ol>
+            </section>
+
+            <section id="corporativo-nosotras" class="section" aria-labelledby="corporativo-nosotras-title" data-ready>
+              <header class="section__head" data-reveal>
+                <div>
+                  <p class="eyebrow">LIDERAZGO DEL PROYECTO</p>
+                  <h2 id="corporativo-nosotras-title" class="section__title" data-reveal="title">Nosotras</h2>
+                  <p class="section__intro">
+                    Trato directo con quienes dirigen tu proyecto, sin intermediarios y escalando el equipo técnico según la envergadura de cada producción.
+                  </p>
+                </div>
+              </header>
+              <ul class="people">
+                <li class="person" data-reveal>
+                  <figure class="person__photo frame" data-reveal="frame">
+                    <img
+                      src="/media/img/team/catalina-800.webp"
+                      srcset="/media/img/team/catalina-480.webp 480w, /media/img/team/catalina-800.webp 800w"
+                      sizes="(min-width: 48rem) 24rem, 92vw"
+                      width="800"
+                      height="1000"
+                      alt="Retrato de Catalina Krügler"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </figure>
+                  <div class="person__info">
+                    <h3 class="person__name">Catalina Krügler</h3>
+                    <p class="person__role">Producción Ejecutiva y Dirección</p>
+                    <p class="person__bio">
+                      Coordina la relación con cada cliente, el desarrollo de guiones corporativos y la dirección general para asegurar piezas efectivas y alineadas con tu marca.
+                    </p>
+                  </div>
+                </li>
+                <li class="person" data-reveal>
+                  <figure class="person__photo frame" data-reveal="frame">
+                    <img
+                      src="/media/img/team/integrante-2-800.webp"
+                      srcset="/media/img/team/integrante-2-480.webp 480w, /media/img/team/integrante-2-800.webp 800w"
+                      sizes="(min-width: 48rem) 24rem, 92vw"
+                      width="800"
+                      height="1000"
+                      alt="Retrato de Constanza"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </figure>
+                  <div class="person__info">
+                    <h3 class="person__name">Constanza</h3>
+                    <p class="person__role">Dirección de Arte, Realización y Postproducción</p>
+                    <p class="person__bio">
+                      Supervisa la factura visual, el diseño de motion graphics y el flujo de postproducción para garantizar entregas impecables en todos los formatos.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </section>
+
+            <section id="corporativo-contacto" class="section section--contact" aria-labelledby="corporativo-contacto-title" data-ready data-reveal>
+              <div class="contact-card">
+                <p class="eyebrow">PRESUPUESTOS · LICITACIONES · AGENCIAS</p>
+                <h2 id="corporativo-contacto-title" class="section__title" data-reveal="title">Cotiza con nosotras</h2>
+                <p class="contact__lead">
+                  Cuéntanos qué necesitas comunicar, los plazos de tu campaña o evento y te responderemos a la brevedad con una propuesta a medida.
+                </p>
+                <a class="contact__mail" href="mailto:contacto@katinfilms.com">contacto@katinfilms.com</a>
+                <ul class="contact__links" aria-label="Redes de Katinfilms">
+                  <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                  <li><a href="https://vimeo.com/" target="_blank" rel="noopener noreferrer">Vimeo</a></li>
+                  <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                </ul>
+              </div>
+            </section>
+
+            <footer class="world-footer" data-ready>
+              <span>© 2026 Katinfilms · Santiago de Chile</span>
+              <a href="#cine">← Ir a Cine y Animación</a>
+            </footer>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

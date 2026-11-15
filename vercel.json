@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/cine", "destination": "/#cine", "permanent": false },
+    { "source": "/corporativo", "destination": "/#corporativo", "permanent": false }
+  ]
+}

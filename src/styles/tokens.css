@@ -1,0 +1,88 @@
+/* ==========================================================================
+   Paleta oficial Katinfilms y tokens de diseño
+   ========================================================================== */
+:root {
+  --purple: #5b118c;
+  --purple-deep: #240638;
+  --orange: #fd830c;
+  --yellow: #fbffbb;
+  --ink: #0c0212;
+  --cream: #feffeb;
+
+  /* Rubik Variable: geométrica con curvas superelípticas y vértices suavizados (mismo ADN visual que Panton) + soporte completo del español (tildes, ñ, ü, ¡¿) */
+  --font-display: 'Rubik Variable', 'Rubik', 'Montserrat Variable', 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Montserrat Variable', 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+
+  /* Escala tipográfica armónica y controlada */
+  --step--1: clamp(0.8rem, 0.76rem + 0.15vw, 0.9rem);
+  --step-0: clamp(0.98rem, 0.94rem + 0.2vw, 1.08rem);
+  --step-1: clamp(1.15rem, 1.08rem + 0.35vw, 1.35rem);
+  --step-2: clamp(1.4rem, 1.25rem + 0.65vw, 1.85rem);
+  --step-3: clamp(1.75rem, 1.5rem + 1.1vw, 2.35rem);
+  --step-4: clamp(2.15rem, 1.75rem + 1.8vw, 3.1rem);
+  --step-5: clamp(2.5rem, 1.95rem + 2.6vw, 4.1rem);
+  --step-6: clamp(3rem, 2.2rem + 3.8vw, 5.25rem);
+
+  --gutter: clamp(1.25rem, 4vw, 3.5rem);
+  --container-max: 80rem;
+  --measure: 64ch;
+  --nav-h: 4.5rem;
+  --radius: 0.75rem;
+  --radius-sm: 0.5rem;
+
+  /* Cinta divisoria */
+  --strip-w: clamp(16px, 1.4vw, 22px);
+  --door-w: calc(var(--strip-w) + 1.5rem);
+
+  /* Curvas de movimiento */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.87, 0, 0.13, 1);
+  --dur-xs: 200ms;
+  --dur-s: 450ms;
+  --dur-m: 800ms;
+  --dur-l: 1200ms;
+}
+
+/* Tema Mundo 1: Cine (Oscuro · Tinta, Morado, Amarillo Luz y Naranja) */
+.world--cine,
+[data-world='cine'],
+[data-theme='cine'] {
+  color-scheme: dark;
+  --bg: var(--ink);
+  --bg-elevated: rgba(91, 17, 140, 0.18);
+  --bg-card: rgba(25, 7, 38, 0.82);
+  --fg: var(--cream);
+  --muted: rgba(251, 255, 187, 0.76);
+  --heading: var(--yellow);
+  --accent: var(--orange);
+  --surface: var(--purple);
+  --surface-hover: #7118ad;
+  --on-surface: var(--cream);
+  --line: rgba(251, 255, 187, 0.16);
+  --line-strong: rgba(253, 131, 12, 0.45);
+  --focus: var(--orange);
+  --brand-mark: var(--orange);
+  --brand-word: var(--yellow);
+}
+
+/* Tema Mundo 2: Corporativo (Claro · Crema, Morado, Tinta y Naranja) */
+.world--corporativo,
+[data-world='corporativo'],
+[data-theme='corporativo'] {
+  color-scheme: light;
+  --bg: var(--cream);
+  --bg-elevated: rgba(91, 17, 140, 0.05);
+  --bg-card: #ffffff;
+  --fg: var(--ink);
+  --muted: rgba(12, 2, 18, 0.72);
+  --heading: var(--purple);
+  --accent: var(--purple);
+  --surface: var(--orange);
+  --surface-hover: #e56f00;
+  --on-surface: var(--ink);
+  --line: rgba(91, 17, 140, 0.15);
+  --line-strong: rgba(91, 17, 140, 0.32);
+  --focus: var(--purple);
+  --brand-mark: var(--purple);
+  --brand-word: var(--ink);
+}
