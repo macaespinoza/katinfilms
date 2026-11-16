@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 384 204">
+  <title>Artboard 1</title>
+  <g>
+    <g>
+      <rect x="0" y="23.25" width="48.75" height="45" style="fill:#000000"/>
+      <rect x="71.25" y="23.25" width="241.5" height="180.75" style="fill:#000000"/>
+      <rect x="335.25" y="23.25" width="48.75" height="45" style="fill:#000000"/>
+      <rect x="0" y="90.75" width="48.75" height="45.75" style="fill:#000000"/>
+      <rect x="0" y="158" width="48.75" height="45.75" style="fill:#000000"/>
+      <rect x="335.25" y="90.75" width="48.75" height="45.75" style="fill:#000000"/>
+      <rect x="335.25" y="158.25" width="48.75" height="45.75" style="fill:#000000"/>
+    </g>
+  </g>
+</svg>

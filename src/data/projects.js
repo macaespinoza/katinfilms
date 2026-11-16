@@ -91,7 +91,7 @@ export const projects = [
     category: 'institucional',
     summary:
       'Producción integral de cápsulas audiovisuales corporativas, dirección de fotografía en locación y postproducción para comunicación B2B y lanzamientos de línea.',
-    poster: '/media/img/work/michiboo-styleframe.jpg',
+    poster: null,
     logo: '/media/img/clients/legrand.png',
     badge: 'Producción B2B · Dirección & Post',
   },
@@ -104,7 +104,7 @@ export const projects = [
     category: 'campana',
     summary:
       'Piezas audiovisuales para ecosistema digital, showrooms y redes sociales destacando diseño industrial, hogares conectados y experiencia de usuario.',
-    poster: '/media/img/work/myl-styleframe.png',
+    poster: null,
     logo: '/media/img/clients/bticino.webp',
     badge: 'Campaña Digital · Motion & Color',
   },
@@ -117,7 +117,7 @@ export const projects = [
     category: 'institucional',
     summary:
       'Desarrollo de piezas de video institucional y visualización animada de estudios de mercado para presentaciones ejecutivas y difusión multimedial.',
-    poster: '/media/img/work/heritage-of-darkness.png',
+    poster: null,
     logo: '/media/img/clients/activa.png',
     badge: 'Cápsulas Ejecutivas · Motion Graphics',
   },
@@ -130,7 +130,7 @@ export const projects = [
     category: 'cobertura',
     summary:
       'Registro audiovisual técnico, cobertura de proyectos de energía solar y sistemas de almacenamiento para posicionamiento de marca en Latinoamérica.',
-    poster: '/media/img/work/recuerdos-en-la-niebla.png',
+    poster: null,
     logo: '/media/img/clients/solis-storage.png',
     badge: 'Registro Industrial · Cobertura',
   },
